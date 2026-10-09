@@ -1,19 +1,16 @@
-import { Logo, Container, NavItem, Input, SearchIcon, IconButton, HeartIcon, CartIcon, Avatar } from '../../../shared/ui';
-
-const navItems = [
-    { label: 'Products', href: '#', hasDropdown: true },
-    { label: 'Rooms', href: '#', hasDropdown: true },
-    { label: 'Inspirations', href: '#', hasDropdown: false },
-];
+import { Logo, Container, NavItem, Dropdown, Input, SearchIcon, IconButton, HeartIcon, CartIcon, Avatar } from '../../../shared/ui';
+import { navItems } from '../config/navItems';
 
 export const Header = () => (
-    <header className="py-6">
+    <header className="sticky top-0 z-50 bg-white py-6">
         <Container className='flex items-center gap-10'>
             <Logo />
 
-            <nav className='flex items-center gap-8 hidden md:flex items-center gap-8'>
-                {navItems.map(({ label, href, hasDropdown }) => (
-                    <NavItem key={label} href={href} hasDropdown={hasDropdown} >{label}</NavItem>
+            <nav className='hidden md:flex items-center gap-8'>
+                {navItems.map(({ label, href, hasDropdown, items }) => (
+                    hasDropdown
+                        ? <Dropdown key={label} label={label} href={href} items={items} />
+                        : <NavItem key={label} href={href}>{label}</NavItem>
                 ))}
             </nav>
 

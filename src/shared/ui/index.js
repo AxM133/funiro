@@ -7,6 +7,7 @@ export { useCarousel } from './Carousel/useCarousel';
 export { ContactItem } from './ContactItem/ContactItem';
 export { Container } from './Container/Container';
 export { Dots } from './Dots/Dots';
+export { Dropdown } from './Dropdown/Dropdown';
 export { FeatureItem } from './FeatureItem/FeatureItem';
 export * from './Icon/icons';
 export { IconButton } from './IconButton/IconButton';
